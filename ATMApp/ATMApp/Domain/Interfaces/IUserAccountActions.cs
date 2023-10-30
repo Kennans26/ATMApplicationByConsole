@@ -6,8 +6,10 @@ using System.Threading.Tasks;
 
 namespace ATMApp.Domain.Interfaces
 {
-    public interface IUserLogin
+    public interface IUserAccountActions
     {
-        void CheckUserCardNumAndPassword();
+        void CheckBalance();
+        void PlaceDeposit();
+        void MakeWithDrawal();
     }
 }

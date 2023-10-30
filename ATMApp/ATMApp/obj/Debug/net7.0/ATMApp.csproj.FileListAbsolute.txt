@@ -3,11 +3,13 @@ C:\Users\kenna\source\repos\ATMApplication\ATMApp\ATMApp\bin\Debug\net7.0\ATMApp
 C:\Users\kenna\source\repos\ATMApplication\ATMApp\ATMApp\bin\Debug\net7.0\ATMApp.runtimeconfig.json
 C:\Users\kenna\source\repos\ATMApplication\ATMApp\ATMApp\bin\Debug\net7.0\ATMApp.dll
 C:\Users\kenna\source\repos\ATMApplication\ATMApp\ATMApp\bin\Debug\net7.0\ATMApp.pdb
+C:\Users\kenna\source\repos\ATMApplication\ATMApp\ATMApp\bin\Debug\net7.0\ConsoleTables.dll
 C:\Users\kenna\source\repos\ATMApplication\ATMApp\ATMApp\obj\Debug\net7.0\ATMApp.csproj.AssemblyReference.cache
 C:\Users\kenna\source\repos\ATMApplication\ATMApp\ATMApp\obj\Debug\net7.0\ATMApp.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\kenna\source\repos\ATMApplication\ATMApp\ATMApp\obj\Debug\net7.0\ATMApp.AssemblyInfoInputs.cache
 C:\Users\kenna\source\repos\ATMApplication\ATMApp\ATMApp\obj\Debug\net7.0\ATMApp.AssemblyInfo.cs
 C:\Users\kenna\source\repos\ATMApplication\ATMApp\ATMApp\obj\Debug\net7.0\ATMApp.csproj.CoreCompileInputs.cache
+C:\Users\kenna\source\repos\ATMApplication\ATMApp\ATMApp\obj\Debug\net7.0\ATMApp.csproj.CopyComplete
 C:\Users\kenna\source\repos\ATMApplication\ATMApp\ATMApp\obj\Debug\net7.0\ATMApp.dll
 C:\Users\kenna\source\repos\ATMApplication\ATMApp\ATMApp\obj\Debug\net7.0\refint\ATMApp.dll
 C:\Users\kenna\source\repos\ATMApplication\ATMApp\ATMApp\obj\Debug\net7.0\ATMApp.pdb

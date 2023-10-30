@@ -1,8 +1,10 @@
 {
   "version": 2,
-  "dgSpecHash": "qgNwbDzevJUHptaONvlw1g3Z/lomFklL9QXLT0Lw5soCjRRbkmPPwdeHfopLPR52cOntMTgCXorSmepJGKJUbg==",
+  "dgSpecHash": "vbaVU35J1VoSWJONaxsP86h2trPP6sZvim+eZaemxuIZ++HIpKZUG7LrtW8URA4yG3FKP27Zm4LHqQE+OXzx1Q==",
   "success": true,
   "projectFilePath": "C:\\Users\\kenna\\source\\repos\\ATMApplication\\ATMApp\\ATMApp\\ATMApp.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\kenna\\.nuget\\packages\\consoletables\\2.6.1\\consoletables.2.6.1.nupkg.sha512"
+  ],
   "logs": []
 }

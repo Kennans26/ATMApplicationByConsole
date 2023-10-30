@@ -7,17 +7,15 @@ using System.Threading.Tasks;
 
 namespace ATMApp.App
 {
-    internal class Entry
+    class Entry
     {
-        private static void Main(string[] args)
+        static void Main(string[] args)
         {
-            AppScreen.Welcome();
-
+            
             ATMApp atmApp = new ATMApp();
-            atmApp.CheckUserCardNumberAndPassword();
-
-            //for exit My ATM App
-            Utility.PressEnterToContinue();
+            atmApp.InitializeData();
+            atmApp.Run();              
+           
         }
     }
 }

@@ -21,7 +21,7 @@ namespace ATMApp.UI
                 try
                 {
                     var converter = TypeDescriptor.GetConverter(typeof(T));
-                    if (converter != null)
+                    if(converter != null)
                     {
                         return (T)converter.ConvertFromString(userInput);
                     }
@@ -32,10 +32,9 @@ namespace ATMApp.UI
                 }
                 catch
                 {
-                    Utility.PrintMessage("Invalid input. Try again.", false);
+                    Utility.PrintMessage("Invalid input. Try again!", false);
                 }
             }
-
             return default;
         }
     }

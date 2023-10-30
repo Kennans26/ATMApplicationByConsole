@@ -4,10 +4,12 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ATMApp.Domain.Interfaces
+namespace ATMApp.Domain.Enums
 {
-    public interface IUserLogin
+    public enum TransactionType
     {
-        void CheckUserCardNumAndPassword();
+        Deposit,
+        Withdrawal,
+        Transfer
     }
 }

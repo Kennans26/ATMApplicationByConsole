@@ -7,8 +7,19 @@
   "targets": {
     ".NETCoreApp,Version=v7.0": {
       "ATMApp/1.0.0": {
+        "dependencies": {
+          "ConsoleTables": "2.6.1"
+        },
         "runtime": {
           "ATMApp.dll": {}
+        }
+      },
+      "ConsoleTables/2.6.1": {
+        "runtime": {
+          "lib/netstandard2.1/ConsoleTables.dll": {
+            "assemblyVersion": "2.0.0.0",
+            "fileVersion": "2.6.1.0"
+          }
         }
       }
     }
@@ -18,6 +29,13 @@
       "type": "project",
       "serviceable": false,
       "sha512": ""
+    },
+    "ConsoleTables/2.6.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-TyU885plpk88kMxgayy5+QQvtt/t3ZR45+vSvaKqZiaK+YsGVE6Mv7sV3fwjUMv3jHT15DdkpxW/+o+uc+bAJQ==",
+      "path": "consoletables/2.6.1",
+      "hashPath": "consoletables.2.6.1.nupkg.sha512"
     }
   }
 }
