@@ -8,7 +8,7 @@ namespace ATMApp.UI
 {
     public static class Utility
     {
-        public static string? GetUserInput(string prompt)
+        public static string GetUserInput(string prompt)
         {
             Console.WriteLine($"Enter {prompt}: ");
             return Console.ReadLine();

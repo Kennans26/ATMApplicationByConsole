@@ -8,7 +8,7 @@ namespace ATMApp.App
         private static void Main(string[] args)
         {
             AppScreen.Welcome();
-            string? cardNumber = Utility.GetUserInput("your card number");
+            long cardNumber = Validator.Convert<long>("your card number");
             Console.WriteLine($"Your card number is: {cardNumber}.");
 
             Utility.PressEnterToContinue();
