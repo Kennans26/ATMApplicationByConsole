@@ -1,13 +1,34 @@
 ﻿using ATMApp.Domain.Entities;
+using ATMApp.Domain.Interfaces;
 using ATMApp.UI;
 using System;
 
 namespace ATMApp.App
 {
-    internal class ATMApp
+    internal class ATMApp : IUserLogin
     {
         private List<UserAccount> userAccountList;
         private UserAccount selectedAccount;
+
+        public void CheckUserCardNumberAndPassword()
+        {
+            bool isCorrectLogin = false;
+
+            UserAccount tempUserAccount = new UserAccount();
+
+            tempUserAccount.CardNumber = Validator.Convert<long>("your card number");
+            tempUserAccount.CardPin = Convert.ToInt32(Utility.GetSecretInput("Enter your card PIN:"));
+
+            Console.WriteLine("\nChecking card number and PIN...");
+            int timer = 10;
+            for (int i = 0; i < timer; i++)
+            {
+                Console.Write(".");
+                Thread.Sleep(200);
+            }
+
+            Console.Clear();
+        }
 
         public void InitializedData()
         {

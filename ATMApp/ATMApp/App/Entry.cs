@@ -12,8 +12,9 @@ namespace ATMApp.App
         private static void Main(string[] args)
         {
             AppScreen.Welcome();
-            long cardNumber = Validator.Convert<long>("your card number");
-            Console.WriteLine($"Your card number is: {cardNumber}.");
+
+            ATMApp atmApp = new ATMApp();
+            atmApp.CheckUserCardNumberAndPassword();
 
             //for exit My ATM App
             Utility.PressEnterToContinue();
