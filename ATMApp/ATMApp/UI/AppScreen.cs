@@ -18,7 +18,7 @@ namespace ATMApp.UI
             Console.ForegroundColor = ConsoleColor.White;
 
             //set the welcome message
-            Console.WriteLine("\n\n-------------------Welcome to My ATM App-------------------\n\n");
+            Console.WriteLine("\n-------------------Welcome to My ATM App-------------------\n\n");
             //prompt the user to insert card
             Console.WriteLine("Please insert your ATM card: ");
             Console.WriteLine("Note: Actual ATM machine will accept and validate a physical ATM card," +
