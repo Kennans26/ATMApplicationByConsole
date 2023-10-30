@@ -14,20 +14,8 @@ namespace ATMApp.App
         {
             bool isCorrectLogin = false;
 
-            UserAccount tempUserAccount = new UserAccount();
-
-            tempUserAccount.CardNumber = Validator.Convert<long>("your card number");
-            tempUserAccount.CardPin = Convert.ToInt32(Utility.GetSecretInput("Enter your card PIN:"));
-
-            Console.WriteLine("\nChecking card number and PIN...");
-            int timer = 10;
-            for (int i = 0; i < timer; i++)
-            {
-                Console.Write(".");
-                Thread.Sleep(200);
-            }
-
-            Console.Clear();
+            UserAccount inputAccount = AppScreen.UserLoginForm();
+            AppScreen.LoginProgress();
         }
 
         public void InitializedData()

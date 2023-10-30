@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ATMApp.Domain.Entities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -28,6 +29,22 @@ namespace ATMApp.UI
             Console.ForegroundColor = ConsoleColor.White;
 
             Utility.PressEnterToContinue();
+        }
+
+        internal static UserAccount UserLoginForm()
+        {
+            UserAccount tempUserAccount = new UserAccount();
+
+            tempUserAccount.CardNumber = Validator.Convert<long>("your card number");
+            tempUserAccount.CardPin = Convert.ToInt32(Utility.GetSecretInput("Enter your card PIN:"));
+        
+            return tempUserAccount;
+        }
+
+        internal static void LoginProgress()
+        {
+            Console.WriteLine("\nChecking card number and PIN...");
+            Utility.PrintDotAnimation();
         }
     }
 }
