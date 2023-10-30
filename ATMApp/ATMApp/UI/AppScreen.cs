@@ -24,8 +24,7 @@ namespace ATMApp.UI
             Console.WriteLine("Note: Actual ATM machine will accept and validate a physical ATM card," +
                 " read the card number and validate it.");
 
-            Console.WriteLine("\n\nPress Enter to continue...\n");
-            Console.ReadLine();
+            Utility.PressEnterToContinue();
         }
     }
 }
