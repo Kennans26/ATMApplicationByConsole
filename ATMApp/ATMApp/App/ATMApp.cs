@@ -28,6 +28,7 @@ namespace ATMApp
             AppScreen.Welcome();
             CheckUserCardNumAndPassword();
             AppScreen.WelcomeCustomer(selectedAccount.FullName);
+
             while (true)
             {
                 AppScreen.DisplayAppMenu();
@@ -39,9 +40,9 @@ namespace ATMApp
         {
             userAccountList = new List<UserAccount>
             {
-                new UserAccount{Id = 1, FullName = "Name Surname 1", AccountNumber=123456, CardNumber = 321321, CardPin = 123123, AccountBalance = 50000.00m, IsLocked = false},
-                new UserAccount{Id = 2, FullName = "Name Surname 2", AccountNumber=456789, CardNumber = 654654, CardPin = 456456, AccountBalance = 4000.00m, IsLocked = false},
-                new UserAccount{Id = 3, FullName = "Name Surname 3", AccountNumber=123555, CardNumber = 987987, CardPin = 789789, AccountBalance = 2000.00m, IsLocked = true},
+                new UserAccount{Id = 1, FullName = "Name Surname 1", AccountNumber = 111111, CardNumber = 321321, CardPin = 123123, AccountBalance = 50000.00m, IsLocked = false},
+                new UserAccount{Id = 2, FullName = "Name Surname 2", AccountNumber = 222222, CardNumber = 654654, CardPin = 456456, AccountBalance = 4000.00m, IsLocked = false},
+                new UserAccount{Id = 3, FullName = "Name Surname 3", AccountNumber = 333333, CardNumber = 987987, CardPin = 789789, AccountBalance = 2000.00m, IsLocked = true},
             };
             _listOfTransactions = new List<Transaction>();
         }
@@ -137,7 +138,7 @@ namespace ATMApp
             Utility.PrintDotAnimation();
             Console.WriteLine("");
 
-            //some gaurd clause
+            //some guard clause
             if (transaction_amt <= 0)
             {
                 Utility.PrintMessage("Amount needs to be greater than zero. Try again.", false); ;
@@ -297,17 +298,17 @@ namespace ATMApp
                 return;
             }
 
-            //check reciever's account number is valid
-            var selectedBankAccountReciever = (from userAcc in userAccountList
+            //check receiver's account number is valid
+            var selectedBankAccountReceiver = (from userAcc in userAccountList
                                                where userAcc.AccountNumber == internalTransfer.ReciepeintBankAccountNumber
                                                select userAcc).FirstOrDefault();
-            if(selectedBankAccountReciever == null)
+            if(selectedBankAccountReceiver == null)
             {
-                Utility.PrintMessage("Transfer failed. Recieber bank account number is invalid.", false);
+                Utility.PrintMessage("Transfer failed. Receiver bank account number is invalid.", false);
                 return;
             }
             //check receiver's name
-            if(selectedBankAccountReciever.FullName != internalTransfer.RecipientBankAccountName)
+            if(selectedBankAccountReceiver.FullName != internalTransfer.RecipientBankAccountName)
             {
                 Utility.PrintMessage("Transfer Failed. Recipient's bank account name does not match.", false);
                 return;
@@ -315,17 +316,17 @@ namespace ATMApp
 
             //add transaction to transactions record- sender
             InsertTransaction(selectedAccount.Id, TransactionType.Transfer, -internalTransfer.TransferAmount, "Transfered " +
-                $"to {selectedBankAccountReciever.AccountNumber} ({selectedBankAccountReciever.FullName})");
+                $"to {selectedBankAccountReceiver.AccountNumber} ({selectedBankAccountReceiver.FullName})");
             //update sender's account balance
             selectedAccount.AccountBalance -= internalTransfer.TransferAmount;
 
             //add transaction record-reciever
-            InsertTransaction(selectedBankAccountReciever.Id, TransactionType.Transfer, internalTransfer.TransferAmount, "Transfered from " +
+            InsertTransaction(selectedBankAccountReceiver.Id, TransactionType.Transfer, internalTransfer.TransferAmount, "Transfered from " +
                 $"{selectedAccount.AccountNumber}({selectedAccount.FullName})");
-            //update reciever's account balance
-            selectedBankAccountReciever.AccountBalance += internalTransfer.TransferAmount;
+            //update receiver's account balance
+            selectedBankAccountReceiver.AccountBalance += internalTransfer.TransferAmount;
             //print success message
-            Utility.PrintMessage($"You have successfully transfered" +
+            Utility.PrintMessage($"You have successfully transferred" +
                 $" {Utility.FormatAmount(internalTransfer.TransferAmount)} to " +
                 $"{internalTransfer.RecipientBankAccountName}",true);
 

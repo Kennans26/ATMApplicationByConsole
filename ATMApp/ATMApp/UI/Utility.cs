@@ -10,19 +10,19 @@ namespace ATMApp.UI
 {
     public static class Utility
     {
-        private static long tranId;
+        private static long transId;
 
         private static CultureInfo culture = new CultureInfo("IG-NG");
 
         public static long GetTransactionId()
         {
-            return ++tranId;
+            return ++transId;
         }
 
         public static string GetSecretInput(string prompt)
         {
             bool isPrompt = true;
-            string asterics = "";
+            string asterisk = "";
 
             StringBuilder input = new StringBuilder();
 
@@ -55,7 +55,7 @@ namespace ATMApp.UI
                 else if (inputKey.Key != ConsoleKey.Backspace)
                 {
                     input.Append(inputKey.KeyChar);
-                    Console.Write(asterics + "*");
+                    Console.Write(asterisk + "*");
                 }
 
             }
