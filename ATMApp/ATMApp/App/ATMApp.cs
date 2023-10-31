@@ -130,7 +130,7 @@ namespace ATMApp
 
         public void PlaceDeposit()
         {
-            Console.WriteLine("\nOnly multiples of 500 and 1000 euros allowed.\n");
+            Console.WriteLine("\nOnly multiples of 500 and 1000 dollars allowed.\n");
             var transaction_amt = Validator.Convert<int>($"amount {AppScreen.cur}");
 
             //simulate counting
@@ -193,7 +193,7 @@ namespace ATMApp
             }
             if(transaction_amt % 500 != 0)
             {
-                Utility.PrintMessage("You can only withdraw amount in multiples of 500 or 1000 euros. Try again.", false);
+                Utility.PrintMessage("You can only withdraw amount in multiples of 500 or 1000 dollars. Try again.", false);
                 return;
             }
             //Business logic validations
@@ -230,7 +230,7 @@ namespace ATMApp
             Console.WriteLine($"{AppScreen.cur}500 X {fiveHundredNotesCount} = {500 * fiveHundredNotesCount}");
             Console.WriteLine($"Total amount: {Utility.FormatAmount(amount)}\n\n");
 
-            int opt = Validator.Convert<int>("1 to confirm");
+            int opt = Validator.Convert<int>("1 to confirm:");
             return opt.Equals(1);   
         }
 

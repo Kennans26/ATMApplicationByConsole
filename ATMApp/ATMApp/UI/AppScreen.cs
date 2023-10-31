@@ -58,7 +58,10 @@ namespace ATMApp.UI
 
         internal static void WelcomeCustomer(string fullName)
         {
+            Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine($"Welcome back, {fullName}!");
+            Console.ForegroundColor = ConsoleColor.White;
+
             Utility.PressEnterToContinue();
         }
 
