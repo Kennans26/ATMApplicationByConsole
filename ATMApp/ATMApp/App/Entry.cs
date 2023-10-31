@@ -14,7 +14,7 @@ namespace ATMApp.App
             
             ATMApp atmApp = new ATMApp();
             atmApp.InitializeData();
-            atmApp.Run();              
+            atmApp.Run();            
            
         }
     }

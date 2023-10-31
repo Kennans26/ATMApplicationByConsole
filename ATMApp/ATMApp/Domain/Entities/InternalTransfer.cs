@@ -11,6 +11,5 @@ namespace ATMApp.Domain.Entities
         public decimal TransferAmount { get; set; }
         public long RecipientBankAccountNumber { get; set; }
         public string RecipientBankAccountName { get; set; }
-        public long ReciepeintBankAccountNumber { get; internal set; }
     }
 }

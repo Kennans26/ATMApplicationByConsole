@@ -77,17 +77,17 @@ namespace ATMApp
                             }
                         }
                     }
-                    if (isCorrectLogin == false)
-                    {
-                        Utility.PrintMessage("\nInvalid card number or PIN.", false);
-                        selectedAccount.IsLocked = selectedAccount.TotalLogin == 3;
-                        if (selectedAccount.IsLocked)
-                        {
-                            AppScreen.PrintLockScreen();
-                        }
-                    }
-                  Console.Clear();
                 }
+                if (isCorrectLogin == false)
+                {
+                    Utility.PrintMessage("\nInvalid card number or PIN.", false);
+                    selectedAccount.IsLocked = selectedAccount.TotalLogin == 3;
+                    if (selectedAccount.IsLocked)
+                    {
+                        AppScreen.PrintLockScreen();
+                    }
+                }
+                Console.Clear();
             }            
         }
         
@@ -130,11 +130,11 @@ namespace ATMApp
 
         public void PlaceDeposit()
         {
-           Console.WriteLine("\nOnly multiples of 500 and 1000 naira allowed.\n");
+            Console.WriteLine("\nOnly multiples of 500 and 1000 euros allowed.\n");
             var transaction_amt = Validator.Convert<int>($"amount {AppScreen.cur}");
 
             //simulate counting
-            Console.WriteLine("\nChecking and Counting bank notes.");
+            Console.WriteLine("\nChecking and Counting bank notes...");
             Utility.PrintDotAnimation();
             Console.WriteLine("");
 
@@ -164,10 +164,7 @@ namespace ATMApp
 
             //print success message
             Utility.PrintMessage($"Your deposit of {Utility.FormatAmount(transaction_amt)} was " +
-                $"succesful.", true);
-
-
-
+                $"successful.", true);
         }
 
         public void MakeWithDrawal()
@@ -196,7 +193,7 @@ namespace ATMApp
             }
             if(transaction_amt % 500 != 0)
             {
-                Utility.PrintMessage("You can only withdraw amount in multiples of 500 or 1000 naira. Try again.", false);
+                Utility.PrintMessage("You can only withdraw amount in multiples of 500 or 1000 euros. Try again.", false);
                 return;
             }
             //Business logic validations
@@ -234,8 +231,7 @@ namespace ATMApp
             Console.WriteLine($"Total amount: {Utility.FormatAmount(amount)}\n\n");
 
             int opt = Validator.Convert<int>("1 to confirm");
-            return opt.Equals(1);
-            
+            return opt.Equals(1);   
         }
 
         public void InsertTransaction(long _UserBankAccountId, TransactionType _transType, decimal _transAmount, string _desc)
@@ -300,7 +296,7 @@ namespace ATMApp
 
             //check receiver's account number is valid
             var selectedBankAccountReceiver = (from userAcc in userAccountList
-                                               where userAcc.AccountNumber == internalTransfer.ReciepeintBankAccountNumber
+                                               where userAcc.AccountNumber == internalTransfer.RecipientBankAccountNumber
                                                select userAcc).FirstOrDefault();
             if(selectedBankAccountReceiver == null)
             {
@@ -315,13 +311,13 @@ namespace ATMApp
             }
 
             //add transaction to transactions record- sender
-            InsertTransaction(selectedAccount.Id, TransactionType.Transfer, -internalTransfer.TransferAmount, "Transfered " +
+            InsertTransaction(selectedAccount.Id, TransactionType.Transfer, -internalTransfer.TransferAmount, "Transferred " +
                 $"to {selectedBankAccountReceiver.AccountNumber} ({selectedBankAccountReceiver.FullName})");
             //update sender's account balance
             selectedAccount.AccountBalance -= internalTransfer.TransferAmount;
 
-            //add transaction record-reciever
-            InsertTransaction(selectedBankAccountReceiver.Id, TransactionType.Transfer, internalTransfer.TransferAmount, "Transfered from " +
+            //add transaction record-receiver
+            InsertTransaction(selectedBankAccountReceiver.Id, TransactionType.Transfer, internalTransfer.TransferAmount, "Transferred from " +
                 $"{selectedAccount.AccountNumber}({selectedAccount.FullName})");
             //update receiver's account balance
             selectedBankAccountReceiver.AccountBalance += internalTransfer.TransferAmount;
@@ -329,7 +325,6 @@ namespace ATMApp
             Utility.PrintMessage($"You have successfully transferred" +
                 $" {Utility.FormatAmount(internalTransfer.TransferAmount)} to " +
                 $"{internalTransfer.RecipientBankAccountName}",true);
-
         }
     }
 }

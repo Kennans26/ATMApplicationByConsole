@@ -12,7 +12,7 @@ namespace ATMApp.UI
     {
         private static long transId;
 
-        private static CultureInfo culture = new CultureInfo("IG-NG");
+        private static CultureInfo culture = new CultureInfo("en-GB");
 
         public static long GetTransactionId()
         {

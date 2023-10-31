@@ -9,7 +9,7 @@ namespace ATMApp.UI
 {
     public class AppScreen
     {
-        internal const string cur = "N ";
+        internal const string cur = "$ ";
 
         internal static void Welcome()
         {
@@ -24,8 +24,12 @@ namespace ATMApp.UI
             Console.WriteLine("\n\n-----------------Welcome to My ATM App-----------------\n\n");
             //prompt the user to insert atm card
             Console.WriteLine("Please insert your ATM card");
+
+            Console.ForegroundColor = ConsoleColor.Yellow;
             Console.WriteLine("Note: Actual ATM machine will accept and validate" +
                 " a physical ATM card, read the card number and validate it.");
+            Console.ForegroundColor = ConsoleColor.White;
+
             Utility.PressEnterToContinue();
         }
 
@@ -129,7 +133,7 @@ namespace ATMApp.UI
         {
             var internalTransfer = new InternalTransfer();
             internalTransfer.RecipientBankAccountNumber = Validator.Convert<long>("recipient's account number:");
-            internalTransfer.TransferAmount = Validator.Convert<decimal>($"amount {cur}");
+            internalTransfer.TransferAmount = Validator.Convert<decimal>($"amount {cur}:");
             internalTransfer.RecipientBankAccountName = Utility.GetUserInput("recipient's name:");
             return internalTransfer;
         }
