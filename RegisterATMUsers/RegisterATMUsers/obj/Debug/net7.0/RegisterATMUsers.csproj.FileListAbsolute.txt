@@ -1,0 +1,15 @@
+C:\Users\kenna\source\repos\ATMApplication\RegisterATMUsers\RegisterATMUsers\bin\Debug\net7.0\RegisterATMUsers.exe
+C:\Users\kenna\source\repos\ATMApplication\RegisterATMUsers\RegisterATMUsers\bin\Debug\net7.0\RegisterATMUsers.deps.json
+C:\Users\kenna\source\repos\ATMApplication\RegisterATMUsers\RegisterATMUsers\bin\Debug\net7.0\RegisterATMUsers.runtimeconfig.json
+C:\Users\kenna\source\repos\ATMApplication\RegisterATMUsers\RegisterATMUsers\bin\Debug\net7.0\RegisterATMUsers.dll
+C:\Users\kenna\source\repos\ATMApplication\RegisterATMUsers\RegisterATMUsers\bin\Debug\net7.0\RegisterATMUsers.pdb
+C:\Users\kenna\source\repos\ATMApplication\RegisterATMUsers\RegisterATMUsers\obj\Debug\net7.0\RegisterATMUsers.csproj.AssemblyReference.cache
+C:\Users\kenna\source\repos\ATMApplication\RegisterATMUsers\RegisterATMUsers\obj\Debug\net7.0\RegisterATMUsers.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\kenna\source\repos\ATMApplication\RegisterATMUsers\RegisterATMUsers\obj\Debug\net7.0\RegisterATMUsers.AssemblyInfoInputs.cache
+C:\Users\kenna\source\repos\ATMApplication\RegisterATMUsers\RegisterATMUsers\obj\Debug\net7.0\RegisterATMUsers.AssemblyInfo.cs
+C:\Users\kenna\source\repos\ATMApplication\RegisterATMUsers\RegisterATMUsers\obj\Debug\net7.0\RegisterATMUsers.csproj.CoreCompileInputs.cache
+C:\Users\kenna\source\repos\ATMApplication\RegisterATMUsers\RegisterATMUsers\obj\Debug\net7.0\RegisterATMUsers.dll
+C:\Users\kenna\source\repos\ATMApplication\RegisterATMUsers\RegisterATMUsers\obj\Debug\net7.0\refint\RegisterATMUsers.dll
+C:\Users\kenna\source\repos\ATMApplication\RegisterATMUsers\RegisterATMUsers\obj\Debug\net7.0\RegisterATMUsers.pdb
+C:\Users\kenna\source\repos\ATMApplication\RegisterATMUsers\RegisterATMUsers\obj\Debug\net7.0\RegisterATMUsers.genruntimeconfig.cache
+C:\Users\kenna\source\repos\ATMApplication\RegisterATMUsers\RegisterATMUsers\obj\Debug\net7.0\ref\RegisterATMUsers.dll
