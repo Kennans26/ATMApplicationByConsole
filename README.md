@@ -37,3 +37,7 @@ Log in using your ATM card number and PIN
  * Deposit money
  * Transfer money
  * Check statement of account and logout.
+
+# Result:
+
+https://github.com/Kennans26/ATMApplicationByConsole/blob/main/Result/bandicam%202023-10-31%2013-39-18-659.mp4
