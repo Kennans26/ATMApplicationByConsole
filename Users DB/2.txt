@@ -1,0 +1,7 @@
+User's id: 2
+User's full name: Turkana Huseynova
+User's account number: 222
+User's card number: 10000002
+User's card pin: 200002
+User's account balance: 2000.00
+User's user card's locked status: False

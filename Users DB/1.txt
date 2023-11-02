@@ -2,6 +2,6 @@ User's id: 1
 User's full name: Kanan Huseynov
 User's account number: 111
 User's card number: 10000001
-User's card pin: 101
+User's card pin: 100001
 User's account balance: 5000.00
 User's user card's locked status: False

@@ -5,7 +5,9 @@ using ATMApp.UI;
 using ConsoleTables;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Threading;
 
 namespace ATMApp
@@ -38,13 +40,44 @@ namespace ATMApp
 
         public void InitializeData()
         {
-            userAccountList = new List<UserAccount>
+            //userAccountList = new List<UserAccount>
+            //{
+            //    new UserAccount{Id = 1, FullName = "Name Surname 1", AccountNumber = 111111, CardNumber = 321321, CardPin = 123123, AccountBalance = 50000.00m, IsLocked = false},
+            //    new UserAccount{Id = 2, FullName = "Name Surname 2", AccountNumber = 222222, CardNumber = 654654, CardPin = 456456, AccountBalance = 4000.00m, IsLocked = false},
+            //    new UserAccount{Id = 3, FullName = "Name Surname 3", AccountNumber = 333333, CardNumber = 987987, CardPin = 789789, AccountBalance = 2000.00m, IsLocked = true},
+            //};
+
+            userAccountList = new List<UserAccount>();
+
+            string folderPath = @"C:\Users\kenna\source\repos\ATMApplication\Users DB";
+
+            foreach (string filePath in Directory.GetFiles(folderPath, "*.txt"))
             {
-                new UserAccount{Id = 1, FullName = "Name Surname 1", AccountNumber = 111111, CardNumber = 321321, CardPin = 123123, AccountBalance = 50000.00m, IsLocked = false},
-                new UserAccount{Id = 2, FullName = "Name Surname 2", AccountNumber = 222222, CardNumber = 654654, CardPin = 456456, AccountBalance = 4000.00m, IsLocked = false},
-                new UserAccount{Id = 3, FullName = "Name Surname 3", AccountNumber = 333333, CardNumber = 987987, CardPin = 789789, AccountBalance = 2000.00m, IsLocked = true},
-            };
+                UserAccount userAccount = ReadUserAccountFromFile(filePath);
+                userAccountList.Add(userAccount);
+            }
+
             _listOfTransactions = new List<Transaction>();
+        }
+
+        private UserAccount ReadUserAccountFromFile(string filePath)
+        {
+            UserAccount userAccount = new UserAccount();
+
+            using (StreamReader reader = new StreamReader(filePath))
+            {
+                string text = reader.ReadToEnd();
+
+                userAccount.Id = int.Parse(Regex.Match(text, @"User's id: (\d+)").Groups[1].Value);
+                userAccount.FullName = Regex.Match(text, @"User's full name: (.+)", RegexOptions.Multiline).Groups[1].Value.TrimEnd('\r', '\n', ' ');
+                userAccount.AccountNumber = long.Parse(Regex.Match(text, @"User's account number: (\d+)").Groups[1].Value);
+                userAccount.CardNumber = long.Parse(Regex.Match(text, @"User's card number: (\d+)").Groups[1].Value);
+                userAccount.CardPin = int.Parse(Regex.Match(text, @"User's card pin: (\d+)").Groups[1].Value);
+                userAccount.AccountBalance = decimal.Parse(Regex.Match(text, @"User's account balance: (\d+\.\d+)").Groups[1].Value);
+                userAccount.IsLocked = bool.Parse(Regex.Match(text, @"User's user card's locked status: (\w+)").Groups[1].Value);
+            }
+
+            return userAccount;
         }
 
         public void CheckUserCardNumAndPassword()
