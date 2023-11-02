@@ -6,7 +6,7 @@ namespace RegisterATMUsers
 {
     internal class Base
     {
-        const string myDB = @"C:\Users\kenna\source\repos\ATMApplication\Users DB";
+        public const string myDB = @"C:\Users\kenna\source\repos\ATMApplication\Users DB";
 
         private static void Main(string[] args)
         {
@@ -54,7 +54,7 @@ namespace RegisterATMUsers
                         CardPin = currCardPin,
                         AccountBalance = currAccBalance,
                         IsLocked = currIsLocked
-                    };    
+                    };
 
                     var currFile = Path.Combine(myDB, currUser.Id + ".txt");
 
@@ -86,9 +86,9 @@ namespace RegisterATMUsers
                         Console.Clear();
                     }
 
+                    choice = app.StartingScreen();
                 } while (choice == "yes");
             }
-
         }
     }
 }

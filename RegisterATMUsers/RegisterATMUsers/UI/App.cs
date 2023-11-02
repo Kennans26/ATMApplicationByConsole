@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RegisterATMUsers.Users;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -24,6 +25,7 @@ namespace RegisterATMUsers.UI
 
             return userChoice;
         } 
+
         public void DoNotWantToRegistering()
         {
             Console.WriteLine("\n\nThank you for using our ATM!");
