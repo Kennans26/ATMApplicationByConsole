@@ -10,12 +10,12 @@ namespace RegisterATMUsers
 
         private static void Main(string[] args)
         {
-            App RegisterATMUsers = new App();
-            var choice = RegisterATMUsers.StartingScreen();
+            App app = new App();
+            var choice = app.StartingScreen();
 
             if (choice == "no")
             {
-                Environment.Exit(0);
+                app.DoNotWantToRegistering();
             }
 
             else

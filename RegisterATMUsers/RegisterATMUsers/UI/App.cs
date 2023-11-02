@@ -24,5 +24,13 @@ namespace RegisterATMUsers.UI
 
             return userChoice;
         } 
+        public void DoNotWantToRegistering()
+        {
+            Console.WriteLine("\n\nThank you for using our ATM!");
+
+            Thread.Sleep(1000);
+
+            Environment.Exit(0);
+        }
     }
 }
