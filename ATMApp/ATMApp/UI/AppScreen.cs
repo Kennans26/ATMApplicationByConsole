@@ -53,6 +53,8 @@ namespace ATMApp.UI
             Console.Clear();
             Utility.PrintMessage("Your account is locked. Please go to the nearest branch" +
                 " to unlock your account. Thank you!", true);
+
+            //For 3 time (every time card in):
             Environment.Exit(1);
         }
 
