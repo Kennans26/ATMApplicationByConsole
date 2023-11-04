@@ -40,13 +40,6 @@ namespace ATMApp
 
         public void InitializeData()
         {
-            //userAccountList = new List<UserAccount>
-            //{
-            //    new UserAccount{Id = 1, FullName = "Name Surname 1", AccountNumber = 111111, CardNumber = 321321, CardPin = 123123, AccountBalance = 50000.00m, IsLocked = false},
-            //    new UserAccount{Id = 2, FullName = "Name Surname 2", AccountNumber = 222222, CardNumber = 654654, CardPin = 456456, AccountBalance = 4000.00m, IsLocked = false},
-            //    new UserAccount{Id = 3, FullName = "Name Surname 3", AccountNumber = 333333, CardNumber = 987987, CardPin = 789789, AccountBalance = 2000.00m, IsLocked = true},
-            //};
-
             userAccountList = new List<UserAccount>();
 
             string folderPath = @"C:\Users\kenna\source\repos\ATMApplication\Users DB";

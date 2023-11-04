@@ -1,0 +1,7 @@
+User's id: 3
+User's full name: Huseyn Huseynov
+User's account number: 333
+User's card number: 10000003
+User's card pin: 300003
+User's account balance: 25000.00
+User's user card's locked status: True
