@@ -226,7 +226,7 @@ namespace ATMApp
 
             if(transaction_amt > selectedAccount.AccountBalance)
             {
-                Utility.PrintMessage($"Withdrawal failed. Your balance is too low to withdraw" +
+                Utility.PrintMessage($"Withdrawal failed. Your balance is too low to withdraw " +
                     $"{Utility.FormatAmount(transaction_amt)}", false);
                 return;
             }
